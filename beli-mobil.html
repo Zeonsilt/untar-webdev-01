@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pembelian Asuransi Mobil — AsuransiKita</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-shield-halved"></i></span>
+      AsuransiKita
+    </a>
+    <nav class="nav-links nav-links-primary">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#produk-mobil">Asuransi Mobil</a>
+      <a href="index.html#produk-kesehatan">Asuransi Kesehatan</a>
+      <a href="index.html#produk-jiwa">Asuransi Jiwa</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="histori.html" class="btn btn-ghost btn-sm"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp; Riwayat</a>
+      <div class="user-chip"><span class="avatar">BS</span><span class="name-text">Budi Santoso</span></div>
+      <a href="index.html" id="btn-logout" class="btn btn-outline btn-sm">Keluar</a>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Beranda</a>
+    <span class="sep">/</span>
+    <a href="detail-mobil.html">Asuransi Mobil</a>
+    <span class="sep">/</span>
+    <span class="current">Formulir Pembelian</span>
+  </nav>
+
+  <div class="section-head" style="text-align:left; margin:0 0 8px; max-width:100%;">
+    <h2 style="font-size:26px;">Formulir Pembelian Asuransi Mobil</h2>
+    <p>Lengkapi data kendaraan anda untuk mendapatkan estimasi premi.</p>
+  </div>
+
+  <form id="form-beli-mobil" class="purchase-layout" novalidate>
+    <div>
+
+      <div class="detail-card">
+        <div class="alert" id="mobil-alert"></div>
+
+        <h4 class="form-section-title"><i class="fa-solid fa-car"></i> Data Kendaraan</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobil-merk">Merk Mobil <span class="req">*</span></label>
+            <input type="text" id="mobil-merk" class="form-control no-icon" placeholder="Contoh: Toyota" />
+            <span class="field-error" id="mobil-merk-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="mobil-jenis">Jenis Mobil <span class="req">*</span></label>
+            <select id="mobil-jenis" class="form-control">
+              <option value="">Pilih jenis mobil</option>
+              <option>Sedan</option>
+              <option>SUV</option>
+              <option>MPV</option>
+              <option>Hatchback</option>
+              <option>Pick-up</option>
+              <option>Lainnya</option>
+            </select>
+            <span class="field-error" id="mobil-jenis-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobil-tahun">Tahun Pembuatan <span class="req">*</span></label>
+            <input type="number" id="mobil-tahun" class="form-control no-icon" placeholder="Contoh: 2021" min="1980" />
+            <span class="field-error" id="mobil-tahun-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="mobil-harga">Harga Mobil (Rp) <span class="req">*</span></label>
+            <input type="text" id="mobil-harga" class="form-control no-icon" placeholder="Contoh: 250.000.000" inputmode="numeric" />
+            <span class="field-error" id="mobil-harga-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobil-plat">Nomor Plat Mobil <span class="req">*</span></label>
+            <input type="text" id="mobil-plat" class="form-control no-icon" placeholder="Contoh: B 1234 XYZ" />
+            <span class="field-error" id="mobil-plat-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="mobil-pemilik">Nama Pemilik <span class="req">*</span></label>
+            <input type="text" id="mobil-pemilik" class="form-control no-icon" placeholder="Sesuai STNK" />
+            <span class="field-error" id="mobil-pemilik-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobil-mesin">Nomor Mesin <span class="req">*</span></label>
+            <input type="text" id="mobil-mesin" class="form-control no-icon" placeholder="Nomor mesin kendaraan" />
+            <span class="field-error" id="mobil-mesin-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="mobil-rangka">Nomor Rangka <span class="req">*</span></label>
+            <input type="text" id="mobil-rangka" class="form-control no-icon" placeholder="Nomor rangka kendaraan" />
+            <span class="field-error" id="mobil-rangka-error"></span>
+          </div>
+        </div>
+
+        <h4 class="form-section-title"><i class="fa-solid fa-camera"></i> Dokumentasi Foto Kendaraan</h4>
+        <p class="field-hint" style="margin-bottom:14px;">Unggah 6 foto berikut untuk keperluan verifikasi polis.</p>
+
+        <div class="file-drop-grid" id="mobil-foto-grid">
+          <label class="file-drop" data-label="Tampak Depan">
+            <i class="fa-solid fa-camera"></i>
+            <span class="file-drop-text">Tampak Depan <span class="req">*</span></span>
+            <span class="file-drop-name">Klik untuk unggah</span>
+            <input type="file" accept="image/*" data-photo="depan" hidden />
+          </label>
+          <label class="file-drop" data-label="Tampak Belakang">
+            <i class="fa-solid fa-camera"></i>
+            <span class="file-drop-text">Tampak Belakang <span class="req">*</span></span>
+            <span class="file-drop-name">Klik untuk unggah</span>
+            <input type="file" accept="image/*" data-photo="belakang" hidden />
+          </label>
+          <label class="file-drop" data-label="Tampak Kiri">
+            <i class="fa-solid fa-camera"></i>
+            <span class="file-drop-text">Tampak Kiri <span class="req">*</span></span>
+            <span class="file-drop-name">Klik untuk unggah</span>
+            <input type="file" accept="image/*" data-photo="kiri" hidden />
+          </label>
+          <label class="file-drop" data-label="Tampak Kanan">
+            <i class="fa-solid fa-camera"></i>
+            <span class="file-drop-text">Tampak Kanan <span class="req">*</span></span>
+            <span class="file-drop-name">Klik untuk unggah</span>
+            <input type="file" accept="image/*" data-photo="kanan" hidden />
+          </label>
+          <label class="file-drop" data-label="Dashboard">
+            <i class="fa-solid fa-camera"></i>
+            <span class="file-drop-text">Dashboard <span class="req">*</span></span>
+            <span class="file-drop-name">Klik untuk unggah</span>
+            <input type="file" accept="image/*" data-photo="dashboard" hidden />
+          </label>
+          <label class="file-drop" data-label="Mesin">
+            <i class="fa-solid fa-camera"></i>
+            <span class="file-drop-text">Mesin <span class="req">*</span></span>
+            <span class="file-drop-name">Klik untuk unggah</span>
+            <input type="file" accept="image/*" data-photo="mesin" hidden />
+          </label>
+        </div>
+        <span class="field-error" id="mobil-foto-error"></span>
+      </div>
+    </div>
+
+    <aside>
+      <div class="estimator-card">
+        <h4>Estimasi Premi</h4>
+        <div class="estimator-line"><span>Umur Kendaraan</span><span id="est-mobil-umur">&mdash;</span></div>
+        <div class="estimator-line"><span>Tarif Premi</span><span id="est-mobil-tarif">&mdash;</span></div>
+        <div class="estimator-total">
+          <div class="lbl">Estimasi Premi</div>
+          <div class="val" id="est-mobil-total">Rp0</div>
+          <div class="per">per tahun</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px;">
+          Lanjut ke Checkout <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <p class="field-hint text-center" style="margin-top:12px;">Isi merk, tahun, dan harga mobil untuk melihat estimasi.</p>
+      </div>
+    </aside>
+  </form>
+</main>
+
+<footer class="site-footer" style="margin-top:20px;">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; margin-top:0; padding-top:0;">
+      <span>&copy; 2026 AsuransiKita. Proyek tugas kuliah Front End Programming — bukan layanan komersial nyata.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/insurance-calc.js"></script>
+<script src="js/purchase.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Masuk — AsuransiKita</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-shield-halved"></i></span>
+      AsuransiKita
+    </a>
+    <nav class="nav-links nav-links-primary">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#produk-mobil">Asuransi Mobil</a>
+      <a href="index.html#produk-kesehatan">Asuransi Kesehatan</a>
+      <a href="index.html#produk-jiwa">Asuransi Jiwa</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="signup.html" class="btn btn-primary btn-sm">Daftar Gratis</a>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="auth-shell">
+
+  <div class="auth-visual">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-shield-halved"></i></span>
+      AsuransiKita
+    </a>
+
+    <div>
+      <h2>Satu akun untuk semua kebutuhan asuransi anda.</h2>
+      <p>Kelola polis, cek estimasi premi, dan pantau histori pembelian dalam satu tempat.</p>
+    </div>
+
+    <div class="quote-card">
+      <p style="margin-bottom:8px; font-style:italic;">&ldquo;Proses bandingkan produknya cepat, dan tampilannya enak dilihat.&rdquo;</p>
+      <strong style="font-size:13.5px;">— Pengguna AsuransiKita</strong>
+    </div>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-card">
+      <a href="index.html" class="top-link"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+      <h1>Selamat Datang Kembali</h1>
+      <p class="subtitle">Masuk ke akun anda untuk melanjutkan.</p>
+
+      <div class="alert" id="login-alert"></div>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="login-email">Email <span class="req">*</span></label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-envelope field-icon"></i>
+            <input type="text" id="login-email" class="form-control" placeholder="nama@email.com" autocomplete="username" />
+          </div>
+          <span class="field-error" id="login-email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Kata Sandi <span class="req">*</span></label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-lock field-icon"></i>
+            <input type="password" id="login-password" class="form-control" placeholder="Masukkan kata sandi" autocomplete="current-password" />
+            <button type="button" class="toggle-visibility" id="toggle-login-password" aria-label="Tampilkan kata sandi">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <span class="field-error" id="login-password-error"></span>
+        </div>
+
+        <div class="form-options">
+          <label class="form-check">
+            <input type="checkbox" /> Ingat saya
+          </label>
+          <a href="#">Lupa kata sandi?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Masuk <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+
+        <p class="field-hint text-center" style="margin-top:16px;">
+          Demo: gunakan <strong>demo@asuransikita.id</strong> / <strong>Demo1234</strong> untuk simulasi login berhasil.
+        </p>
+      </form>
+
+      <p class="foot-note">Belum punya akun? <a href="signup.html">Daftar di sini</a></p>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/insurance-calc.js"></script>
+<script src="js/validation.js"></script>
+</body>
+</html>

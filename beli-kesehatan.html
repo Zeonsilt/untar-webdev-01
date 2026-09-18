@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pembelian Asuransi Kesehatan — AsuransiKita</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-shield-halved"></i></span>
+      AsuransiKita
+    </a>
+    <nav class="nav-links nav-links-primary">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#produk-mobil">Asuransi Mobil</a>
+      <a href="index.html#produk-kesehatan">Asuransi Kesehatan</a>
+      <a href="index.html#produk-jiwa">Asuransi Jiwa</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="histori.html" class="btn btn-ghost btn-sm"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp; Riwayat</a>
+      <div class="user-chip"><span class="avatar">BS</span><span class="name-text">Budi Santoso</span></div>
+      <a href="index.html" id="btn-logout" class="btn btn-outline btn-sm">Keluar</a>
+      <button class="nav-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Beranda</a>
+    <span class="sep">/</span>
+    <a href="detail-kesehatan.html">Asuransi Kesehatan</a>
+    <span class="sep">/</span>
+    <span class="current">Formulir Pembelian</span>
+  </nav>
+
+  <div class="section-head" style="text-align:left; margin:0 0 8px; max-width:100%;">
+    <h2 style="font-size:26px;">Formulir Pembelian Asuransi Kesehatan</h2>
+    <p>Lengkapi data diri dan riwayat kesehatan anda untuk mendapatkan estimasi premi.</p>
+  </div>
+
+  <form id="form-beli-kesehatan" class="purchase-layout" novalidate>
+    <div>
+      <div class="detail-card">
+        <div class="alert" id="kesehatan-alert"></div>
+
+        <h4 class="form-section-title"><i class="fa-solid fa-id-card"></i> Data Diri</h4>
+        <div class="form-group">
+          <label for="kesehatan-nama">Nama Lengkap Sesuai KTP <span class="req">*</span></label>
+          <input type="text" id="kesehatan-nama" class="form-control no-icon" placeholder="Sesuai KTP" />
+          <span class="field-error" id="kesehatan-nama-error"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="kesehatan-tgl-lahir">Tanggal Lahir <span class="req">*</span></label>
+            <input type="date" id="kesehatan-tgl-lahir" class="form-control no-icon" />
+            <span class="field-error" id="kesehatan-tgl-lahir-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="kesehatan-pekerjaan">Pekerjaan <span class="req">*</span></label>
+            <input type="text" id="kesehatan-pekerjaan" class="form-control no-icon" placeholder="Contoh: Karyawan Swasta" />
+            <span class="field-error" id="kesehatan-pekerjaan-error"></span>
+          </div>
+        </div>
+
+        <h4 class="form-section-title"><i class="fa-solid fa-notes-medical"></i> Riwayat Kesehatan</h4>
+
+        <div class="form-group">
+          <label>Apakah anda merokok? <span class="req">*</span></label>
+          <div class="radio-pill-group" data-toggle-group="merokok">
+            <label class="radio-pill"><input type="radio" name="merokok" value="1" /> Ya</label>
+            <label class="radio-pill"><input type="radio" name="merokok" value="0" /> Tidak</label>
+          </div>
+          <span class="field-error" id="kesehatan-merokok-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Punya riwayat hipertensi? <span class="req">*</span></label>
+          <div class="radio-pill-group" data-toggle-group="hipertensi">
+            <label class="radio-pill"><input type="radio" name="hipertensi" value="1" /> Ya</label>
+            <label class="radio-pill"><input type="radio" name="hipertensi" value="0" /> Tidak</label>
+          </div>
+          <span class="field-error" id="kesehatan-hipertensi-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Punya riwayat diabetes? <span class="req">*</span></label>
+          <div class="radio-pill-group" data-toggle-group="diabetes">
+            <label class="radio-pill"><input type="radio" name="diabetes" value="1" /> Ya</label>
+            <label class="radio-pill"><input type="radio" name="diabetes" value="0" /> Tidak</label>
+          </div>
+          <span class="field-error" id="kesehatan-diabetes-error"></span>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="estimator-card">
+        <h4>Estimasi Premi</h4>
+        <div class="estimator-line"><span>Usia Pemegang Polis</span><span id="est-kesehatan-usia">&mdash;</span></div>
+        <div class="estimator-line"><span>Faktor Pengali Usia</span><span id="est-kesehatan-m">&mdash;</span></div>
+        <div class="estimator-line"><span>Premi Dasar</span><span id="est-kesehatan-dasar">Rp2.000.000</span></div>
+        <div class="estimator-total">
+          <div class="lbl">Estimasi Premi</div>
+          <div class="val" id="est-kesehatan-total">Rp0</div>
+          <div class="per">per tahun</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px;">
+          Lanjut ke Checkout <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <p class="field-hint text-center" style="margin-top:12px;">Isi tanggal lahir untuk melihat estimasi premi.</p>
+      </div>
+    </aside>
+  </form>
+</main>
+
+<footer class="site-footer" style="margin-top:20px;">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; margin-top:0; padding-top:0;">
+      <span>&copy; 2026 AsuransiKita. Proyek tugas kuliah Front End Programming — bukan layanan komersial nyata.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/insurance-calc.js"></script>
+<script src="js/purchase.js"></script>
+</body>
+</html>
